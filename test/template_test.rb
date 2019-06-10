@@ -87,7 +87,7 @@ JS
   end
 
   it 'transpiles with a prefixed name matching a pattern' do
-    ES6ModuleTranspiler.add_prefix_pattern /app/, 'app'
+    ES6ModuleTranspiler.add_prefix_pattern(/app/, 'app')
 
     expected = <<-JS
 define("app/controllers/foo", 
@@ -129,8 +129,8 @@ JS
   end
 
   it "can detect multiple prefix patterns" do
-    ES6ModuleTranspiler.add_prefix_pattern /app/, 'app'
-    ES6ModuleTranspiler.add_prefix_pattern /config/, 'config'
+    ES6ModuleTranspiler.add_prefix_pattern(/app/, 'app')
+    ES6ModuleTranspiler.add_prefix_pattern(/config/, 'config')
 
     expected = <<-JS
 define("app/models/foo", 

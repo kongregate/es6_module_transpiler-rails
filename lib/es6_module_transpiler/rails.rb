@@ -3,6 +3,9 @@ require 'es6_module_transpiler/tilt'
 require 'es6_module_transpiler/sprockets'
 
 module ES6ModuleTranspiler
+  @transform = nil
+  @compile_to = nil
+
   def self.compile_to
     @compile_to || :amd
   end
@@ -20,7 +23,7 @@ module ES6ModuleTranspiler
   end
 
   def self.lookup_prefix(path)
-    _, prefix = prefix_patterns.detect {|pattern, prefix| pattern =~ path }
+    _, prefix = prefix_patterns.detect {|pattern, __| pattern =~ path }
 
     prefix
   end

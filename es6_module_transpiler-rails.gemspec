@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'execjs'
+  spec.add_dependency 'grease'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'tilt'
   spec.add_development_dependency 'sprockets', '> 2.0.0'
