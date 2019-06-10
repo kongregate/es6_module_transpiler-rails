@@ -11,6 +11,13 @@ module Tilt
       encoding: 'UTF-8'
     )
 
+    def self.call(input)
+      context = input[:environment].context_class.new(input)
+      template = ES6ModuleTranspilerTemplate.new { input[:data] }
+
+      context.metadata.merge(data: template.render(context).to_str)
+    end
+
     def prepare
       # intentionally left empty
       # Tilt requires this method to be defined
